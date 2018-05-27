@@ -13,7 +13,7 @@ from setuptools import find_packages, setup, Command
 
 # Package meta-data.
 NAME = 'three20s'
-DESCRIPTION = 'Notifier to take break every 20 minutes to prevent RSI.'
+DESCRIPTION = 'A 20-20-20 rule reminder to prevent digital eye strain.'
 URL = 'https://github.com/msis/three20s'
 EMAIL = 'ms.ibnseddik@gmail.com'
 AUTHOR = 'Mohamed Saad Ibn Seddik'
@@ -89,14 +89,14 @@ setup(
     version=about['__version__'],
     description=DESCRIPTION,
     long_description=long_description,
-    long_description_content_type='text/markdown'
+    long_description_content_type='text/markdown',
     author=AUTHOR,
     author_email=EMAIL,
     python_requires=REQUIRES_PYTHON,
     url=URL,
-    # packages=find_packages(exclude=('tests',)),
+    packages=find_packages(exclude=('tests',)),
     # If your package is a single module, use this instead of 'packages':
-    py_modules=['three20s'],
+    # py_modules=['three20s'],
 
     entry_points={
         'console_scripts': ['three20s=three20s.core:main'],
