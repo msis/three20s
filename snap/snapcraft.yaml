@@ -1,0 +1,29 @@
+name: three20s
+version: '0.1+git' # just for humans, typically '1.2+git' or '1.3.2'
+summary: A 20-20-20 rule reminder to prevent digital eye strain.
+description: |
+  The `three20s` is a simple reminder to follow the 20-20-20 rule written
+  in simple python with maximum hackability.
+  It will remind you to take at something 20 feet away for 20 seconds every
+  20 minutes.
+
+grade: devel # must be 'stable' to release into candidate/stable channels
+confinement: devmode
+
+parts:
+  three20s:
+    plugin: python
+    python-version: python3
+    source: .
+    python-packages:
+      - gobject
+    stage-packages:
+      - libc6
+      - libnotify-bin
+      - python3-gi
+
+apps:
+  three20s:
+    command: bin/three20s
+    plugs:
+      - x11
